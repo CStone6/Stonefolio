@@ -71,6 +71,8 @@ h3 {
   padding: 2%;
   border-radius: 40px;
   filter: drop-shadow(0 0 1em #00bb7a);
+  transform: rotateX(var(--MouseXpy)) rotateY(var(--MouseYpy));
+
 
 }
 
@@ -86,6 +88,8 @@ h3 {
   padding: 2%;
   border-radius: 40px;
   filter: drop-shadow(0 0 1em #00bb7a);
+  transform: rotateX(var(--MouseXjar)) rotateY(var(--MouseYjar));
+
 
 }
 
@@ -96,12 +100,18 @@ h3 {
 .columnhtml {
   height: 100%;
   background-clip: content-box;
-  background-image:linear-gradient(rgb(0, 135, 90), rgb(0, 72, 48));
+  background-image:linear-gradient(rgb(0, 135, 90), rgb(0, 72, 48)),
+  url("./assets/html.png");
   background-size: contain;
-  background-repeat: no-repeat;
   color: aquamarine;
   flex-basis: 33.33%;
   padding: 2%;
   border-radius: 40px;
   filter: drop-shadow(0 0 1em #00bb7a);
+  transform: rotateX(var(--MouseXhtml)) rotateY(var(--MouseYhtml));
+
+}
+
+.langicon{
+  padding: 10px;
 }
