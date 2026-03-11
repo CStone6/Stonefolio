@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import viteLogo from './assets/icon.png'
 import './App.css'
 
 function App() {
@@ -8,28 +8,29 @@ function App() {
 
   return (
     <>
+    <div className='header'>
+      <h1>welcome to my portfolio</h1>
+    </div>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://github.com/CStone6" target="_blank">
+          <img src={viteLogo} className="icon" alt="Vite logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <h1>CStone</h1>
+
+      <hr className='line'></hr>
+
+      <h1>languages i know</h1>
+
+      <div className='row'>
+        <div className='columnpy'><h1>Python</h1></div>
+        <div className='columnjar'><h1>Java</h1></div>
+        <div className='columnhtml'><h1>Web</h1></div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
+
+
 
 export default App
