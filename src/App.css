@@ -21,6 +21,13 @@ h3 {
   color:darkgrey;
 }
 
+h1 {
+  animation: color-shift infinite 15s linear;
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: aquamarine;
+}
+
 .icon {
   height: 20em;
   padding: 1.5em;
@@ -33,17 +40,41 @@ h3 {
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
+    filter: hue-rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+    filter: hue-rotate(0360deg);
+
+  }
+}
+@keyframes bonce {
+  from {
+    scale: 1;
+  }
+  50% {
+    scale: 1.05;
+  }
+  to{
+    scale: 1;
+  }
+}
+@keyframes color-shift {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(0360deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .icon {
-    animation: logo-spin infinite 15s linear;
+    animation: logo-spin infinite 15s linear, bonce infinite 1s ease-in;
   }
 }
+
+
 
 .card {
   padding: 2em;
@@ -58,19 +89,20 @@ h3 {
   width: 100%;
   height: 500px;
   display: flex;
+  padding-bottom: 50px;
 }
 
 .columnpy {
   height: 100%;
   background-clip: content-box;
-  background-image:linear-gradient(rgb(0, 135, 90), rgb(0, 72, 48));
-  background-size: contain;
+  background-image:url("./assets/pythonp.png"), linear-gradient(rgba(0, 255, 153, 0), rgba(0, 255, 162, 0.074));  background-size: contain;
   background-repeat: no-repeat;
   color: aquamarine;
   flex-basis: 33.33%;
+  background-size: cover;
   padding: 2%;
   border-radius: 40px;
-  filter: drop-shadow(0 0 1em #00bb7a);
+  filter: drop-shadow(0 0 1em #28312e);
   transform: rotateX(var(--MouseXpy)) rotateY(var(--MouseYpy));
 
 
@@ -79,39 +111,65 @@ h3 {
 .columnjar {
   height: 100%;
   background-clip: content-box;
-  background-image:linear-gradient(rgb(0, 135, 90), rgb(0, 72, 48));
-  
+  background-image:url("./assets/javav.png"), linear-gradient(rgba(0, 255, 153, 0), rgba(0, 255, 162, 0.074));  
   background-size: cover;
   background-repeat: no-repeat;
   color: aquamarine;
   flex-basis: 33.33%;
   padding: 2%;
   border-radius: 40px;
-  filter: drop-shadow(0 0 1em #00bb7a);
+  filter: drop-shadow(0 0 1em #28312e);
   transform: rotateX(var(--MouseXjar)) rotateY(var(--MouseYjar));
 
 
 }
 
 .line {
-  color: rgb(1, 89, 94)
+  color: aquamarine;
+  animation: color-shift infinite 15s linear;
 }
 
 .columnhtml {
   height: 100%;
   background-clip: content-box;
-  background-image:linear-gradient(rgb(0, 135, 90), rgb(0, 72, 48)),
-  url("./assets/html.png");
-  background-size: contain;
+  background-image:url("./assets/jscsshtml.png"), linear-gradient(rgba(0, 255, 153, 0), rgba(0, 255, 162, 0.074));
+  background-size:cover;
   color: aquamarine;
   flex-basis: 33.33%;
   padding: 2%;
   border-radius: 40px;
-  filter: drop-shadow(0 0 1em #00bb7a);
+  filter: drop-shadow(0 0 1em #28312e);
   transform: rotateX(var(--MouseXhtml)) rotateY(var(--MouseYhtml));
 
 }
 
 .langicon{
   padding: 10px;
+}
+.projects {
+  flex-direction:  column;
+  display: flex; /* or inline-flex */
+  justify-content: flex-start;
+  
+}
+
+.project {
+  display: flex; /* or inline-flex */
+  justify-content: center;
+  align-items: center;
+}
+
+.project-icon {
+  height: 5em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 0.5em #64ffffaa);
+}
+
+.project-sub {
+  display: flex;
+  flex-direction:  column;
+  justify-content: flex-start;
 }

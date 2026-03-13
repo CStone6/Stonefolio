@@ -30,11 +30,6 @@ function App() {
     pyx = Math.max(-.06, Math.min(.06, pyx))
     pyy = Math.max(-.06, Math.min(.06, pyy))
 
-    if ( Math.abs(CenterYpy - mousePosition.y) > 300){
-      pyx = 0
-      pyy = 0
-    }
-
 
     document.documentElement.style.setProperty('--MouseYpy', pyx * -1 + 'turn')
     document.documentElement.style.setProperty('--MouseXpy', pyy + 'turn')
@@ -51,10 +46,7 @@ function App() {
     jarx = Math.max(-.06, Math.min(.06, jarx))
     jary = Math.max(-.06, Math.min(.06, jary))
 
-    if ( Math.abs(CenterYjar - mousePosition.y) > 300){
-      jarx = 0
-      jary = 0
-    }
+
 
     document.documentElement.style.setProperty('--MouseYjar', jarx * -1 + 'turn')
     document.documentElement.style.setProperty('--MouseXjar', jary + 'turn')
@@ -70,11 +62,6 @@ function App() {
 
     htmlx = Math.max(-.06, Math.min(.06, htmlx))
     htmly = Math.max(-.06, Math.min(.06, htmly))
-
-    if (Math.abs(CenterYhtml - mousePosition.y) > 300){
-      htmlx = 0
-      htmly = 0
-    }
 
     document.documentElement.style.setProperty('--MouseYhtml', htmlx * -1 + 'turn')
     document.documentElement.style.setProperty('--MouseXhtml', htmly + 'turn')
@@ -95,18 +82,22 @@ function App() {
       <h1>CStone</h1>
       <hr className='line'></hr>
 
-      <h1>languages i know</h1>
+      <h1>languages I know</h1>
 
       <div className='row'>
-        <div class='columnpy'><img src={python} width={350} className="langicon" alt="python logo" /><h1>Python</h1></div>
-        <div class='columnjar'><img src={java} width={200} className="langicon" alt="java logo" /><h1>Java</h1></div>
-        <div class='columnhtml'><img src={html} width={350} className="langicon" alt="html 5 logo" /><h1>Web</h1></div>
+        <div class='columnpy'></div>
+        <div class='columnjar'></div>
+        <div class='columnhtml'></div>
       </div>
-      <p>
-      Your cursor position:
-      <br />
-      {JSON.stringify(mousePosition)}
-    </p>
+      <hr className='line'></hr>
+      <h1>My Projects</h1>
+      <div className='projects'>
+        <div className='project'><img src={viteLogo} className="project-icon" alt="Vite logo" /><div className='project-sub'><h2>Name</h2> <h2> info</h2></div></div>
+        <h1>|</h1>
+        <div className='project'><img src={viteLogo} className="project-icon" alt="Vite logo" /><div className='project-sub'><h2>Name</h2> <h2> info</h2></div></div>
+        <h1>|</h1>
+        <div className='project'><img src={viteLogo} className="project-icon" alt="Vite logo" /><div className='project-sub'><h2>Name</h2> <h2> info</h2></div></div>
+      </div>
     </>
   )
 }

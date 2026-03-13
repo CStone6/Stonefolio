@@ -30,10 +30,7 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 button {
   border-radius: 8px;
@@ -52,6 +49,15 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+@keyframes color-shift {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(0360deg);
+  }
 }
 
 @media (prefers-color-scheme: light) {
