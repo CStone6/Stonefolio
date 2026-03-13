@@ -1,22 +1,32 @@
 import { useState, useEffect } from 'react'
-import python from './assets/python.png'
-import java from './assets/java.png'
-import html from './assets/html.png'
 import viteLogo from './assets/icon.png'
 import './App.css'
 import useMousePosition from './hooks/Mouse.jsx';
 import getCenter from './hooks/getCenter.js';
-
+import { projectinfo } from './hooks/data.js'
 
 // todo add smothing to icon, add real info
 
-
-
+function ProjectCard({project}) {
+  const [showMore, setShowMore] = useState(false);
+  return(
+  <div className='project'>
+    <a href={project.url}><img src={viteLogo} className="project-icon" alt="Vite logo" /></a>
+    <div className='project-sub'>
+      <div className='next'><h2>{project.name}</h2> &nbsp; &nbsp; <h3>{project.createDate}</h3></div>
+      <button  onClick={() => setShowMore(!showMore)}>More Info</button>
+       {showMore && <p className='projectText'>{project.Function}</p>}
+       </div>
+       
+  </div>
+  )
+}
 
 function App() {
+
   const mousePosition = useMousePosition();
-  const [count, setCount] = useState(0)
-  
+
+
   useEffect(() => {
     // mouse math for python panel 
 
@@ -67,8 +77,6 @@ function App() {
     document.documentElement.style.setProperty('--MouseXhtml', htmly + 'turn')
 }, [mousePosition]);
 
-
-
   return (
     <>
     <div className='header'>
@@ -92,12 +100,11 @@ function App() {
       <hr className='line'></hr>
       <h1>My Projects</h1>
       <div className='projects'>
-        <div className='project'><img src={viteLogo} className="project-icon" alt="Vite logo" /><div className='project-sub'><h2>Name</h2> <h2> info</h2></div></div>
-        <h1>|</h1>
-        <div className='project'><img src={viteLogo} className="project-icon" alt="Vite logo" /><div className='project-sub'><h2>Name</h2> <h2> info</h2></div></div>
-        <h1>|</h1>
-        <div className='project'><img src={viteLogo} className="project-icon" alt="Vite logo" /><div className='project-sub'><h2>Name</h2> <h2> info</h2></div></div>
+        {projectinfo.map((project) => (
+        <ProjectCard key={project.name} project={project} />
+      ))}
       </div>
+
     </>
   )
 }

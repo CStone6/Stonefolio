@@ -150,26 +150,41 @@ h1 {
   flex-direction:  column;
   display: flex; /* or inline-flex */
   justify-content: flex-start;
-  
+  position: relative;
+  left: 300px;
 }
 
 .project {
   display: flex; /* or inline-flex */
-  justify-content: center;
   align-items: center;
 }
 
 .project-icon {
   height: 5em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  padding: 1em;
   border-radius: 100%;
-  filter: drop-shadow(0 0 0.5em #64ffffaa);
 }
 
 .project-sub {
+  max-width: 580px;
   display: flex;
   flex-direction:  column;
+  position: relative;
   justify-content: flex-start;
+}
+.next {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
+.project-sub button {
+  max-width: 140px;
+
+}
+
+.project-sub p {
+  position: absolute;
+  top: 60px;
+  left: 150px;
+  min-width: 500px;
 }
