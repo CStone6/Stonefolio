@@ -4,6 +4,8 @@ import './App.css'
 import useMousePosition from './hooks/Mouse.jsx';
 import getCenter from './hooks/getCenter.js';
 import { projectinfo } from './hooks/data.js'
+import { DecryptReveal } from '@/components/canvasui/DecryptReveal';
+import Grid from '@/components/canvasui/Grid';
 
 // todo add smothing to icon, add real info
 
@@ -79,32 +81,47 @@ function App() {
 
   return (
     <>
-    <div className='header'>
-      <h1>welcome to my portfolio</h1>
-    </div>
-      <div>
-        <a href="https://github.com/CStone6" target="_blank">
-          <img src={viteLogo} className="icon" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>CStone</h1>
-      <hr className='line'></hr>
+    <center>
+      <Grid tileSize="50">
+        <div className='header'>
+          <h1>welcome to my portfolio</h1>
+        </div>
+          <div>
+            <a href="https://github.com/CStone6" target="_blank">
+              <img src={viteLogo} className="icon" alt="Vite logo" />
+            </a>
+          </div>
+          <h1>CStone</h1>
+          <hr className='line'></hr>
 
-      <h1>languages I know</h1>
+          <h1>languages I know</h1>
 
-      <div className='row'>
-        <div class='columnpy'></div>
-        <div class='columnjar'></div>
-        <div class='columnhtml'></div>
-      </div>
-      <hr className='line'></hr>
-      <h1>My Projects</h1>
-      <div className='projects'>
-        {projectinfo.map((project) => (
-        <ProjectCard key={project.name} project={project} />
-      ))}
-      </div>
+          <div className='row'>
+            <div class='columnpy'></div>
+            <div class='columnjar'></div>
+            <div class='columnhtml'></div>
+          </div>
+          <hr className='line'></hr>
+          
+          <h1>My Projects</h1>
 
+              <div className='projects' style={{ width: "100vw", height: "100vh" }}>
+                <DecryptReveal
+                  radius={400}
+                  color="#4ade80"
+                  cell={10}
+                  style={{ width: "100%", height: "100%" }}
+                >
+                  <div>
+                  {projectinfo.map((project) => (
+                  <ProjectCard key={project.name} project={project} />
+                ))}
+                  </div>
+                </DecryptReveal>
+              </div>
+        </Grid>
+      </center>
+        
     </>
   )
 }
