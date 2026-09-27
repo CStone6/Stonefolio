@@ -5,11 +5,45 @@
     <link rel="icon" type="image/png" href="/Stonefolio/assets/icon-zPfkvLbm.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stonefolio</title>
-    <script type="module" crossorigin src="/Stonefolio/assets/index-BZ6Pj7Kr.js"></script>
-    <link rel="stylesheet" crossorigin href="/Stonefolio/assets/index-CzFHkaFN.css">
+    <html lang="en" class="dark"></html>
+    <script type="module" crossorigin src="/Stonefolio/assets/index-B5Gbwos0.js"></script>
+    <link rel="stylesheet" crossorigin href="/Stonefolio/assets/index-DvMmV4gs.css">
   </head>
+<style></style>
   <body>
-    <div id="root"></div>
+    <div id="root"></div> 
+    
+    
+  <dialog id="my-dialog">
+    <p>This project uses experimental Chrome features and is recommended to have canvas-draw-element enabled The page still works fine without the feature 
+    <p><code>chrome://flags/#canvas-draw-element</code></p>
+    <button onclick="navigator.clipboard.writeText('chrome://flags/#canvas-draw-element'); alert('Link copied! Paste it into a new tab.');">
+      Copy Flag Link
+    </button>
+    <button commandfor="my-dialog" command="close">Close</button>
+  </dialog>
+    
+    
+    <script>
+      function isHtmlInCanvasSupported() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  
+  return !!(ctx && typeof ctx.drawElementImage === 'function');
+}
+
+if (isHtmlInCanvasSupported()) {
+  console.log("HTML-in-Canvas API is supported");
+  const myDialog = document.getElementById('my-dialog');
+  myDialog.showModal();
+} else {
+  console.error(" HTML-in-Canvas is not supported. Please use chrome");
+  const myDialog = document.getElementById('my-dialog');
+  myDialog.showModal();
+
+}
+    </script>
+   
     
   </body>
 </html>
