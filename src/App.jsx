@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import viteLogo from './assets/icon.png'
 import './App.css'
 import { projectinfo } from './hooks/data.js'
@@ -8,6 +7,7 @@ import Grid from '@/components/canvasui/Grid';
 import balls from './assets/projects/output.gif';
 import screen from './assets/IMG_2121.png';
 import pojecticon from './assets/imageout.png';
+import carisel from './assets/output.png';
 
 // todo add smothing to icon, add real info
 function App() {
@@ -34,6 +34,7 @@ function App() {
             <div>
               <h1 className='maintext' >Robot ball</h1>
               <h2>I got the idea when i was taking apart an old sphero bb8 i wanted to fix the battery but it didn't work but that gave me the idea. i originally wanted to make it much bigger but my 3d printer wasn't big enough to do that </h2>
+              <button class="favorite styled" type="button">learn more</button>
             </div>
           </div>
           <hr className='line'></hr>
@@ -52,9 +53,23 @@ function App() {
             <div>
               <h1 className='maintext' >Physics sim</h1>
               <h2>A while ago I created a simple python physics engine I think i have lost that version. But for a class project I made one for android. I am ashamed to say but ai did help me make them but im hoping to make a new one some time soon without ai</h2>
+              <button class="favorite styled" type="button">learn more</button>
             </div>
           </div>
           <hr className='line'></hr>
+          <div className='header'>
+            <h1>software i know</h1>
+            <img src={carisel} alt='a spinning Apng of an 3d pentagon with images of blender Tinkercad python and html css'/>
+          </div>
+          <div className="software-list">
+            <li>blender</li>
+            <li>tinkercad</li>
+            <li>python</li>
+            <li>html</li>
+            <li>css</li>
+            <li>linux</li>
+          </div>
+
         </center>
       </ParticleScroll>
     </>
